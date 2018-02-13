@@ -420,12 +420,8 @@ def optimizer(params):
 
     results = backtest({'stake_amount': OPTIMIZE_CONFIG['stake_amount'],
                         'processed': PROCESSED,
-<<<<<<< HEAD
-                        'stoploss': stoploss})
-=======
                         'stoploss': params['stoploss'],
                         'exchange_name': _CONFIG['exchange']['name']})
->>>>>>> waxie/add_binance_exchange_support
     result_explanation = format_results(results)
 
     total_profit = results.profit_percent.sum()

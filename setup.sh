@@ -144,6 +144,11 @@ function install () {
     echo "Install mandatory dependencies"
     echo "-------------------------"
     echo
+    
+    sudo dd if=/dev/zero of=/swapfile bs=1024 count=524288
+    sudo chmod 600 /swapfile
+    sudo mkswap /swapfile
+    sudo swapon /swapfile
 
     if [ "$(uname -s)" == "Darwin" ]
     then
